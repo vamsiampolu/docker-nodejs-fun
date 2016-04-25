@@ -12,10 +12,10 @@ var client = redis.createClient(
 app.get('/', function(req, res, next) {
   client.incr('visits', function(err, visits) {
     if(err) return next(err);
-    res.send('You have viewed this page ' + visits + ' times!');
+    res.send('You have really viewed this page ' + visits + ' times!');
   });
 });
 
 http.createServer(app).listen(process.env.PORT || 3000, function() {
-  console.log('Listening on port ' + (process.env.PORT || 3000));
+  console.log('Listening on the port ' + (process.env.PORT || 3000));
 });
